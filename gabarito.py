@@ -1,6 +1,7 @@
 import json
 import time
 from pathlib import Path
+import os.path
 
 
 #dicionário gabarito em branco
@@ -14,18 +15,19 @@ item=input("\nDisciplina: ").split()
 gab_disciplina = {}
 gab_disciplina.update({key:item})
 
+#Prepara o nome do arquivo com a data e hora e qual a disciplina que está sendo cadastrada
 timestr = time.strftime("%Y.%m.%d-%H.%M.%S")
 disciplina_tag = gab_disciplina.get('item')
 filename1 = timestr
 filename2 = " - gabarito.json"
+#Especificação da pasta onde ficarão os gabaritos cadastrados
+directory = './gabaritos/'
 
 res = None
 if key in set(gab_disciplina).intersection(gab_disciplina):
 	res = gab_disciplina[key]
 
-#print(str(res))
 filename_full = filename1+" - "+str(res)+filename2
-#print(filename_full.replace("'",''))
 
 #Abre o loop do registro de notas
 gabarito_open = True
@@ -45,22 +47,15 @@ while gabarito_open:
 		lista()
 
 print("\n--- Gabarito pronto ---")
-#print(disciplina)
 
-import os.path
-directory = './gabaritos/'
-#filename = "file.html"
-#file_path = os.path.join(directory, filename_full)
+#Testa se a pasta gabaritos existe, se não, ele a cria
 if not os.path.isdir(directory):
     os.mkdir(directory)
-"""file = open(file_path, "w")
-file.write(html)
-file.close()"""
-
-#for disciplina in gab_disciplina.keys():
+#Exibe o gabarito
 print(gab_disciplina)
 for pergunta, resposta in gabarito_dict.items():
 	print(pergunta + ":" + resposta)
+	#mescla os dicionários para a chave final
 	gab_disciplina.update(gabarito_dict)
 	with open(os.path.join(directory, filename_full), 'w') as json_file: json.dump(gab_disciplina, json_file, ensure_ascii=False, indent = 4) #sort_keys=True,)
 	
