@@ -52,7 +52,7 @@ print(gab_disciplina)
 for pergunta, resposta in gabarito_dict.items():
 	print(pergunta + ":" + resposta)
 	gab_disciplina.update(gabarito_dict)
-	with open(filename_full, 'w') as json_file: json.dump(gab_disciplina, json_file, ensure_ascii=False)
+	with open(filename_full, 'w') as json_file: json.dump(gab_disciplina, json_file, ensure_ascii=False, indent = 4) #sort_keys=True,)
 	
 print("Gabarito salvo como "+filename_full)
 print()
