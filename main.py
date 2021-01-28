@@ -33,6 +33,7 @@ def listas():
 
 
 
+
 	if (wrong_opt_1):
 		print()
 		print("#### ATENÇÃO !!! ###")
@@ -51,7 +52,7 @@ def listas():
 		
 	elif (main_opt_2):
 		import sgr
-			#print("katiau")
+			
 	elif (main_opt_3):
 			print("Three")
 	elif (main_opt_4):

@@ -8,7 +8,7 @@ print("#Cadastro de notas#")
 print("###################")
 
 def sgr():
-#print("1. Visualizar lista de alunos")
+	print("1. Cadastro de notas de aluno")
 	print("2. Cadastro de notas dos alunos")
 	print("3. Resultado por aluno")
 	print("4. Lista de aprovados")
@@ -44,7 +44,13 @@ def sgr():
 		
 	elif (sr_opt_1):
 		print("opção 01")
-		nome_aluno = input("Qual o nome do aluno? ")
+		# nome_aluno = input("\nQual o nome do aluno? ")
+		# avaliacao = input("\nQual o id da avaliação? ")
+		# import_gab = input("\nImportar o gabarito? (S/N)? ")
+		#if import_gab == "s":
+		import imp_gaba
+
+
 	elif (sr_opt_2):
 			print("katiau")
 	elif (sr_opt_3):
