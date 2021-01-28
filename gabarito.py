@@ -45,6 +45,8 @@ while gabarito_open:
 
 	if pergunta == None:
 		lista()
+	if pergunta is str:
+		print("Favor inserir somente números")
 
 print("\n--- Gabarito pronto ---")
 
@@ -55,9 +57,9 @@ if not os.path.isdir(directory):
 print(gab_disciplina)
 for pergunta, resposta in gabarito_dict.items():
 	print(pergunta + ":" + resposta)
-	#mescla os dicionários para a chave final
+	#mescla os dicionários para a chave
 	gab_disciplina.update(gabarito_dict)
-	with open(os.path.join(directory, filename_full), 'w') as json_file: json.dump(gab_disciplina, json_file, ensure_ascii=False, indent = 4) #sort_keys=True,)
+	with open(os.path.join(directory, filename_full), 'w') as json_file: json.dump(gab_disciplina, json_file, ensure_ascii=False, indent = 4)
 	
 print("Gabarito salvo como "+filename_full)
 print()
