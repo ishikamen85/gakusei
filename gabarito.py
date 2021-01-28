@@ -16,7 +16,8 @@ gab_disciplina = {}
 gab_disciplina.update({key:item})
 
 #Prepara o nome do arquivo com a data e hora e qual a disciplina que está sendo cadastrada
-timestr = time.strftime("%Y.%m.%d-%H.%M.%S")
+#timestr = time.strftime("%Y.%m.%d-%H.%M.%S")
+timestr = time.strftime("%Y%m%d-%H.%M.%S")
 disciplina_tag = gab_disciplina.get('item')
 filename1 = timestr
 filename2 = " - gabarito.json"
