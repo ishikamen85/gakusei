@@ -2,6 +2,7 @@ import json
 import time
 from pathlib import Path
 import os.path
+import itertools
 
 
 #dicionário gabarito em branco
@@ -15,8 +16,13 @@ item=input("\nDisciplina: ").split()
 gab_disciplina = {}
 gab_disciplina.update({key:item})
 
+
+
 #Prepara o nome do arquivo com a data e hora e qual a disciplina que está sendo cadastrada
 #timestr = time.strftime("%Y.%m.%d-%H.%M.%S")
+
+#id_count = counter(filename_full)
+#print(id_count)
 timestr = time.strftime("%Y%m%d-%H.%M.%S")
 disciplina_tag = gab_disciplina.get('item')
 filename1 = timestr
@@ -37,7 +43,15 @@ while gabarito_open:
 	pergunta = input("\nQual o número da pergunta? ")
 	resposta = input("Qual a resposta para esta pergunta? ")
 
+	#Dicionário do peso
+	# key_2 = "Peso"
+	# peso = input("Qual o peso desta questão?\n(Apenas usar valores inteiros) ")
+	# gab_peso = {}
+	# gab_peso.update({key_2:peso})
+
+
 	gabarito_dict[pergunta] = resposta
+
 
 	repeat = input("\nDeseja registar mais uma questão? (s/n) ")
 
@@ -60,6 +74,7 @@ for pergunta, resposta in gabarito_dict.items():
 	print(pergunta + ":" + resposta)
 	#mescla os dicionários para a chave
 	gab_disciplina.update(gabarito_dict)
+	#gab_disciplina.update(gab_peso)
 	with open(os.path.join(directory, filename_full), 'w') as json_file: json.dump(gab_disciplina, json_file, ensure_ascii=False, indent = 4)
 	
 print("Gabarito salvo como "+filename_full)

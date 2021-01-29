@@ -2,8 +2,6 @@ import json
 import requests
 
 
-
-
 print("#############")
 print("###gakusei###")
 print("#############")

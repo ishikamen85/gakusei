@@ -8,5 +8,5 @@ Aqui é possível cadastrar gabaritos, registrar as respostas de cada aluno, rea
 Essa API é totalmente desenvolvida em Python
 
 # Requisitos
-	Instalar Python 3
+	Instalar Python 3, bem como também instalar os módulos necessários para executar a API
 	
