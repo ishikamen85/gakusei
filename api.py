@@ -22,6 +22,17 @@ def api_all():
     return render_template('gabarito.html') 
     #jsonify(gabaritos)
 
+@app.route('/cadastro_aluno/', methods=['GET'])
+def cad_aluno():
+    return render_template('cadastro_aluno.html') 
+
+@app.route('/resultado_aluno/', methods=['GET'])
+def result_aluno():
+    return render_template('resultado_aluno.html') 
+
+@app.route('/aprovados/', methods=['GET'])
+def approved():
+    return render_template('aprovados.html') 
 
 
 app.run(host='localhost', port=2112)
