@@ -9,5 +9,8 @@ Essa API é totalmente desenvolvida em Python
 
 # Requisitos
 	Instalar Python 3, bem como também instalar os módulos necessários para executar a API.
-	Para isso basta executar o script ### para efetuar a instalação dos módulos necessários.
+	
+	Para isso basta executar o script startup_script.bat, em sistemas Windows, para efetuar a instalação dos módulos necessários.
+
+	Certificar-se que o App Url dentro das Configurações do App  é 'http://localhost:59044'
 	
