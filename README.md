@@ -10,11 +10,11 @@ Essa API é totalmente desenvolvida em Python
 [Requisitos]
 	Python 3
 
-Para realizar o setup do Backend/Frontend
+[Para realizar o setup do Backend/Frontend]
+
 	Entrar na pasta gakusei,
-	
-	Executar o script startup_script.bat, em sistemas Windows,
-	para efetuar a instalação dos módulos necessários.
+	Executar o script startup_script.bat, em sistemas Windows,para efetuar a instalação dos módulos necessários.
 
 
 	
+ 
