@@ -7,13 +7,25 @@ Aqui é possível cadastrar gabaritos, registrar as respostas de cada aluno, rea
 
 Essa API é totalmente desenvolvida em Python
 
-[Requisitos]
-	Python 3
+[Requisitos]--\>
+
+Python 3
 
 [Para realizar o setup do Backend/Frontend]
 
 	Entrar na pasta gakusei,
-	Executar o script startup_script.bat, em sistemas Windows,para efetuar a instalação dos módulos necessários.
+	Executar o script startup_script.bat, em sistemas Windows.
+
+	O script irá realizar a instalação dos módulos necessários, bem como
+	também a ara efetuar a instalação dos módulos necessários bem como iniciará o serviço.
+
+Utilizando o site
+-------------
+Selecione a opção desejada e proceda com as operações de cada função.
+Os arquivos de teste, gabarito de correção e gabarito dos alunos encontram-se nas pastas homônimas.
+São arquivos em formato Json.
+
+#API
 
 
 	
