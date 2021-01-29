@@ -16,9 +16,9 @@ def index():
     #
     #return ""
 
-@app.route('/gabaritos/', methods=['GET'])
+@app.route('/gabarito/', methods=['GET'])
 def api_all():
-    return "<h1>Gabaritos</h1>" 
+    return render_template('gabarito.html') 
     #jsonify(gabaritos)
 
 
