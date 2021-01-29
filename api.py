@@ -24,4 +24,4 @@ def api_all():
 
 
 
-app.run()
+app.run(host='localhost', port=2112)

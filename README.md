@@ -7,10 +7,14 @@ Aqui é possível cadastrar gabaritos, registrar as respostas de cada aluno, rea
 
 Essa API é totalmente desenvolvida em Python
 
-# Requisitos
-	Instalar Python 3, bem como também instalar os módulos necessários para executar a API.
-	
-	Para isso basta executar o script startup_script.bat, em sistemas Windows, para efetuar a instalação dos módulos necessários.
+[Requisitos]
+	Python 3
 
-	Certificar-se que o App Url dentro das Configurações do App  é 'http://localhost:59044'
+Para realizar o setup do Backend/Frontend
+	Entrar na pasta gakusei,
+	
+	Executar o script startup_script.bat, em sistemas Windows,
+	para efetuar a instalação dos módulos necessários.
+
+
 	
