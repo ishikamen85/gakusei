@@ -2,28 +2,96 @@ import flask
 import os
 import json
 import jsonify
-from flask import render_template
+import requests
+from flask import Flask, render_template, jsonify
 
 
 
 app = flask.Flask(__name__,template_folder='./templates/')
 app.config["DEBUG"] = True
 
+###Chave dos gabaritos
+gabaritos = [
+	{'id':0,
+	'disciplina': 'Matemática',
+	'data':'25.01.2021',
+	'respostas':[
+	{    "1": "b",
+    "2": "d",
+    "3": "a",
+    "4": "d",
+    "5": "a",
+    "6": "a",
+    "7": "a",
+    "8": "a",
+    "9": "c",
+    "10": "a"}]
+	},
+	{'id':1,
+	'disciplina': 'Português',
+	'data':'25.01.2021',
+	'respostas':[
+	{    "1": "a",
+    "2": "e",
+    "3": "e",
+    "4": "d",
+    "5": "b",
+    "6": "a",
+    "7": "d",
+    "8": "a",
+    "9": "e",
+    "10": "a"}]
 
+	},
+	{'id':2,
+	'disciplina': 'Geografia',
+	'data':'26.01.2021',
+	'respostas':[
+	{    "1": "d",
+    "2": "d",
+    "3": "a",
+    "4": "c",
+    "5": "a",
+    "6": "b",
+    "7": "a",
+    "8": "a",
+    "9": "e",
+    "10": "e"}]
+
+	},
+	{'id':3,
+	'disciplina': 'História',
+	'data':'26.01.2021',
+	'respostas':[
+	{    "1": "a",
+    "2": "a",
+    "3": "d",
+    "4": "e",
+    "5": "e",
+    "6": "a",
+    "7": "b",
+    "8": "a",
+    "9": "c",
+    "10": "a"
+}]
+
+	},
+]
+
+@app.route('/gabaritos_available/', methods=['GET'])
+def hoster():
+	return jsonify(gabaritos)
 
 @app.route('/', methods=['GET'])
 def index():
 	return render_template('index.html')
-	#"<h1>Distant Reading Archive</h1><p>BADADA This site is a prototype API for distant reading of science fiction novels.</p><p><a href=/gabaritos>AQUI</a></p>"
-	#flask.render_template(index.html)
-    #
-    #return ""
+
+
 
 @app.route('/gabarito/', methods=['GET','POST'])
 def api_all():
     return render_template('gabarito.html') 
-    #jsonify(gabaritos)
-
+    
 @app.route('/cadastro_aluno/', methods=['GET','POST'])
 def cad_aluno():
     return render_template('cadastro_aluno.html') 
@@ -36,9 +104,7 @@ def result_aluno():
 def approved():
     return render_template('aprovados.html') 
 
-@app.route('/gab_host/', methods=['GET'])
-def hoster():
-	return "<h1>teste</h1><p><a href=http://localhost:2112>Home</a></p>"
 
 
-app.run(host='localhost', port=2112)
+if __name__=="__main__":
+	app.run(host='localhost', port=2112)
