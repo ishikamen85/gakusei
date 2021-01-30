@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import flask
 import os
 import json
@@ -8,8 +9,14 @@ from pprint import pprint
 from flask import request
 
 
+
 app = flask.Flask(__name__,template_folder='./templates/')
 app.config["DEBUG"] = True
+cwd = os.getcwd()
+	#files = os.listdir(cwd)
+	#basedir = os.path.abspath(os.path.dirname('./alunos'))
+data_file = os.path.join(cwd, 'notas.txt')
+print(data_file)
 
 ###Chave dos gabaritos
 gabaritos = [
@@ -78,10 +85,69 @@ gabaritos = [
 
 	},
 ]
+#######
+#Alunos notas#
+notas = [
+	{'id':0,
+	'nome':'Lucas',
+	'disciplina': 'Matemática',
+	'data':'25.01.2021',
+	'nota':5
+	
+	},
+	{'id':1,
+	'nome':'Lucas',
+	'disciplina': 'Português',
+	'data':'25.01.2021',
+	'nota':6
+	
+	},
+	{'id':2,
+	'nome':'Lucas',
+	'disciplina': 'Geografia',
+	'data':'26.01.2021',
+	'nota':7
+	
+	},
+	{'id':3,
+	'nome':'Lucas',
+	'disciplina': 'História',
+	'data':'26.01.2021',
+	'nota':7
+	
+	},
+	{'id':4,
+	'nome':'Maria',
+	'disciplina': 'Matemática',
+	'data':'25.01.2021',
+	'nota':8
+	
+	},
+	{'id':5,
+	'nome':'Maria',
+	'disciplina': 'Português',
+	'data':'25.01.2021',
+	'nota':9
+	
+	},
+	{'id':6,
+	'nome':'Maria',
+	'disciplina': 'Geografia',
+	'data':'26.01.2021',
+	'nota':10
+	
+	},
+	{'id':7,
+	'nome':'Maria',
+	'disciplina': 'História',
+	'data':'26.01.2021',
+	'nota':9
+	
+	},
+]
 
-#with open(os.path.join(os.path.dirname(__file__), "alunos", "alunos.json")) as file:
- #   alunojson = json.load(file)
-#alunos = json.load(alunojson)
+
+###lista alunos
 alunos = alunos = [
 	{'id':0,
 	'nome':'Lucas',
@@ -256,11 +322,29 @@ def cad_aluno():
 
 @app.route('/resultado_aluno/', methods=['GET'])
 def result_aluno():
+	
 	return render_template('resultado_aluno.html') 
 
-@app.route('/aprovados/', methods=['GET'])
+@app.route('/resultado_aluno/all', methods=['GET'])
+def result_aluno_all():
+	#cwd = os.getcwd()
+
+	#data_file = os.path.join(cwd, 'notas.json')
+	#with open(data_file, 'r') as f:
+	#	file_content = f.read()
+	
+	#return jsonify(file_content) 
+	return jsonify(notas)
+
+@app.route('/aprovados/', methods=['GET','POST'])
+#def approved():
 def approved():
-	return render_template('aprovados.html') 
+	import resultados
+
+	output = 	
+	#from resultados import approved_list
+	#result = approved_list()
+	return render_template('aprovados.html', output=output) 
 
 
 @app.route('/aluno_gab/aluno/all', methods=['GET'])
@@ -284,7 +368,6 @@ def api_nome():
 	if 'nome' in request.args:
 		nome = str(request.args['nome'])
 	else:
-		#return "<h1>ERRO</h1><p>ALUNO não encontrado.</p>Tente novamente</p>"
 		return render_template('erro.html')
 	results = []
 	for nome in nomes:

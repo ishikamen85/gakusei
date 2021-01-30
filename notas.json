@@ -1,0 +1,59 @@
+notas = notas = [
+    {'id':0,
+    'nome':'Lucas',
+    'disciplina': 'Matemática',
+    'data':'25.01.2021',
+    'nota':5
+    
+    },
+    {'id':1,
+    'nome':'Lucas',
+    'disciplina': 'Português',
+    'data':'25.01.2021',
+    'nota':6
+    
+    },
+    {'id':2,
+    'nome':'Lucas',
+    'disciplina': 'Geografia',
+    'data':'26.01.2021',
+    'nota':7
+    
+    },
+    {'id':3,
+    'nome':'Lucas',
+    'disciplina': 'História',
+    'data':'26.01.2021',
+    'nota':7
+    
+    },
+    {'id':4,
+    'nome':'Maria',
+    'disciplina': 'Matemática',
+    'data':'25.01.2021',
+    'nota':8
+    
+    },
+    {'id':5,
+    'nome':'Maria',
+    'disciplina': 'Português',
+    'data':'25.01.2021',
+    'nota':9
+    
+    },
+    {'id':6,
+    'nome':'Maria',
+    'disciplina': 'Geografia',
+    'data':'26.01.2021',
+    'nota':10
+    
+    },
+    {'id':7,
+    'nome':'Maria',
+    'disciplina': 'História',
+    'data':'26.01.2021',
+    'nota':9
+    
+    },
+]
+

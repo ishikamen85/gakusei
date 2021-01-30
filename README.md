@@ -25,18 +25,24 @@ Para realizar o setup do Backend/Frontend
 Utilizando o site
 -------------
 Selecione a opção desejada e proceda com as operações de cada função.
-Os arquivos de teste, gabarito de correção e gabarito dos alunos encontram-se nas pastas homônimas.
-São arquivos em formato Json.
 
 API
 ---------
 	api_gab_all:
-	- GET //
+	- GET
 	--Lista todos gabaritos já postados.
 
 	api_gab_id:
 	- GET
-	--Lista os gabaritos pelo ID. 
+	--Lista os gabaritos pelo ID.
+
+	api_alunos
+	- GET
+	--Lista os gabaritos de todos os alunos que já foram enviados
+
+	result_aluno_all
+	- GET
+	-- Lista o resultado de todos os alunos
 
 
 	
