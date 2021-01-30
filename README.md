@@ -30,7 +30,13 @@ São arquivos em formato Json.
 
 API
 ---------
+	api_gab_all:
+	- GET //
+	--Lista todos gabaritos já postados.
 
+	api_gab_id:
+	- GET
+	--Lista os gabaritos pelo ID. 
 
 
 	
