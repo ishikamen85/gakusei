@@ -19,12 +19,12 @@ def index():
     #
     #return ""
 
-@app.route('/gabarito/', methods=['GET'])
+@app.route('/gabarito/', methods=['GET','POST'])
 def api_all():
     return render_template('gabarito.html') 
     #jsonify(gabaritos)
 
-@app.route('/cadastro_aluno/', methods=['GET'])
+@app.route('/cadastro_aluno/', methods=['GET','POST'])
 def cad_aluno():
     return render_template('cadastro_aluno.html') 
 
