@@ -20,7 +20,7 @@ Para realizar o setup do Backend/Frontend
 	- Executar o script startup_script.bat, em sistemas Windows.
 
 	- O script irá realizar a instalação dos módulos necessários, bem como
-	também a ara efetuar a instalação dos módulos necessários bem como iniciará o serviço.
+	também iniciará o serviço.
 
 Utilizando o site
 -------------
