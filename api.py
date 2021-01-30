@@ -5,8 +5,10 @@ import jsonify
 from flask import render_template
 
 
+
 app = flask.Flask(__name__,template_folder='./templates/')
 app.config["DEBUG"] = True
+
 
 
 @app.route('/', methods=['GET'])
@@ -33,6 +35,10 @@ def result_aluno():
 @app.route('/aprovados/', methods=['GET'])
 def approved():
     return render_template('aprovados.html') 
+
+@app.route('/gab_host/', methods=['GET'])
+def hoster():
+	return "<h1>teste</h1><p><a href=http://localhost:2112>Home</a></p>"
 
 
 app.run(host='localhost', port=2112)
