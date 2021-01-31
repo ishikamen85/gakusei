@@ -7,14 +7,14 @@ import requests
 from flask import Flask, render_template, jsonify
 from pprint import pprint
 from flask import request
+import glob
 
 
 
 app = flask.Flask(__name__,template_folder='./templates/')
 app.config["DEBUG"] = True
 cwd = os.getcwd()
-	#files = os.listdir(cwd)
-	#basedir = os.path.abspath(os.path.dirname('./alunos'))
+
 data_file = os.path.join(cwd, 'notas.txt')
 print(data_file)
 
@@ -327,23 +327,21 @@ def result_aluno():
 
 @app.route('/resultado_aluno/all', methods=['GET'])
 def result_aluno_all():
-	#cwd = os.getcwd()
 
-	#data_file = os.path.join(cwd, 'notas.json')
-	#with open(data_file, 'r') as f:
-	#	file_content = f.read()
-	
-	#return jsonify(file_content) 
 	return jsonify(notas)
 
 @app.route('/aprovados/', methods=['GET','POST'])
-#def approved():
 def approved():
 	import resultados
+	list_of_files = glob.glob('./alunos/*')
+	latest_file = max(list_of_files, key=os.path.getctime)
 
-	output = 	
-	#from resultados import approved_list
-	#result = approved_list()
+	import unicodedata 
+
+	with app.open_resource(latest_file) as f:
+		contents = f.read().decode('latin1')
+	
+	output = contents
 	return render_template('aprovados.html', output=output) 
 
 

@@ -44,6 +44,9 @@ API
 	- GET
 	-- Lista o resultado de todos os alunos
 
+	approved
+	- GET
+	-- Lista os alunos aprovados, a cada acesso ele gera uma lista atualizada, gerada pelo script resultados.py
 
 	
  
