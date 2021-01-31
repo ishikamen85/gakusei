@@ -25,6 +25,7 @@ Para realizar o setup do Backend/Frontend
 Utilização do site
 -------------
 Acesse o endereço http://localhost:2112.
+
 No menu principal, selecione a opção desejada e proceda com as operações de cada função.
 
 API
