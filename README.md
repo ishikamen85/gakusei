@@ -22,9 +22,10 @@ Para realizar o setup do Backend/Frontend
 	- O script irá realizar a instalação dos módulos necessários, bem como
 	também iniciará o serviço.
 
-Utilizando o site
+Utilização do site
 -------------
-Selecione a opção desejada e proceda com as operações de cada função.
+Acesse o endereço http://localhost:21112.
+No menu principal, selecione a opção desejada e proceda com as operações de cada função.
 
 API
 ---------

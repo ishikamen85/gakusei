@@ -361,18 +361,6 @@ def aluno_gab_id():
 			results.append(aluno)
 	return jsonify(results)
 
-@app.route('/aluno_gab/nome/', methods=['GET'])
-def api_nome():
-	if 'nome' in request.args:
-		nome = str(request.args['nome'])
-	else:
-		return render_template('erro.html')
-	results = []
-	for nome in nomes:
-		if nome['nome'] == nome:
-			results.append(nome)
-	return jsonify(results)
-	
 
 if __name__=="__main__":
 	app.run(host='localhost', port=2112)
